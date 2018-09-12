@@ -18,5 +18,12 @@
           "{{.Name}}",
           "--vrdeaddress", "0.0.0.0"       ] 
                 ]
-  }]
+  }],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": true,
+      "output": "{{.BuildName}}.box"
+    }
+  ]
 }

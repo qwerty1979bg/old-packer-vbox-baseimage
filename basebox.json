@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "cloud_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
+    "version": "0.0.{{timestamp}}"
+  },
   "builders": [
     {
       "boot_command": [
@@ -30,7 +34,15 @@
       {
         "type": "vagrant",
         "keep_input_artifact": true,
-        "output": "{{.BuildName}}.box"
+        "output": "{{.BuildName}}.box",
+        "vagrantfile_template": "vagrantfile_template"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "qwerty1979/deb9i686",
+        "access_token": "{{user `cloud_token`}}",
+        "version": "{{user `version`}}",
+        "no_release": "true"
       }
     ]
   ]

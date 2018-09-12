@@ -9,14 +9,23 @@ This repository contains a Packer template for building a vagrant basebox using 
 3. [Install VirtualBox Extension Pack](https://www.virtualbox.org/manual/ch01.html#intro-installing)
 4. Clone this repository and `cd` into it.
 
-Run the following:
+5. Run the following:
 
 ```
+$ export VAGRANT_CLOUD_TOKEN=<Your ATLAS / Vagrant Cloud Token>
 $ packer build basebox.json
 ```
+6. "After testing, "release" the version in the [Vagrant Cloud website](https://app.vagrantup.com/)
 
 At the end, you should have an OVF + VMDK and BOX files ready to use.
+Also the BOX should be uploaded automagically to the Vagrant Cloud.
 
-(Todo:)
-- use ssh keys instead of hardcoded user
-- in the worst case - at least remove the user after the provisioning
+## To use the box with Vagrant:
+
+```
+$ vagrant init qwerty1979/deb9i686
+$ vagrant up
+```
+
+(TODO:)
+- use ssh keys instead of hardcoded user ?

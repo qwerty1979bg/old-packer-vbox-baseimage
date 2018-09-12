@@ -15,7 +15,7 @@ Run the following:
 $ packer build basebox.json
 ```
 
-At the end, you should have an OVF and VMDK files ready to use.
+At the end, you should have an OVF + VMDK and BOX files ready to use.
 
 (Todo:)
 - use ssh keys instead of hardcoded user

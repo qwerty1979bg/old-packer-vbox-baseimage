@@ -1,6 +1,6 @@
-# Packer template to create a basebox ISO using VirtualBox
+# Packer template to create a vagrant box using VirtualBox
 
-This repository contains a Packer template for building a basebox ISO using VirtualBox
+This repository contains a Packer template for building a vagrant basebox using VirtualBox
 
 ## Usage
 
